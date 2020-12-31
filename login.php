@@ -85,7 +85,7 @@ if(!isset($_SESSION['access_token']))
 
 
 /* session expire using time*/
-        if($now > $_SESSION['expire_time'])
+        if($now == $_SESSION['expire_time'])
         {
             echo '<script>alert("session expired, login again to continue.")</script>';    
             header('location:logout.php');
