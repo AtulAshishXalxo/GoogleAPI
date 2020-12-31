@@ -38,18 +38,13 @@
 if(!isset($_SESSION['access_token']))
 {
     //logout using time
-      /*  $_SESSION['start_time'] = time();
-       $_SESSION['expire_time'] = $_SESSION['start_time'] + (1 * 60);
+       $_SESSION['start_time'] = time();
+       $_SESSION['expire_time'] = (1440 * 60) - $_SESSION['start_time'];
        
-       echo $_SESSION['start_time'].'<br>';
+      /*  echo $_SESSION['start_time'].'<br>';
        echo $_SESSION['expire_time'].'<br>';*/
 
-       //logout by date
-       $_SESSION['start_date'] = date('d');
-       $_SESSION['expire_date'] = $_SESSION['start_date'] + 1;
        
-      /*echo $_SESSION['start_date'].'<br>';
-       echo $_SESSION['expire_date'].'<br>';*/
 
     $login_button = '<a href="'.$google_client->createAuthUrl().'"
     style="background: linear-gradient(90deg, red 10%, yellow 45%, green 35%, rgba(0,212,255,1) 100%);width:200px;box-shadow:2px -1px 6px 0px;align:center;margin-top:100px;margin-left:550px;" class="btn btn-block text-white font-weight-bolder p-2 w-10" >Login with google</a>';
@@ -82,26 +77,15 @@ if(!isset($_SESSION['access_token']))
         //echo '<script>alert("token available.")</script>'; 
         
 
-     /* echo $_SESSION['start_time'].'<br>';
+      /* echo $_SESSION['start_time'].'<br>';
        echo $_SESSION['expire_time'].'<br>';*/
 
-       // $now=time();
+       $now=time();
        // echo $now;
 
-       $today=date('d');
-       //echo $today;
 
-
-/* session expire using time
+/* session expire using time*/
         if($now > $_SESSION['expire_time'])
-        {
-            echo '<script>alert("session expired, login again to continue.")</script>';    
-            header('location:logout.php');
-                
-        }*/ 
-
-
-        if($today == $_SESSION['expire_date']) /* session expire by date*/ 
         {
             echo '<script>alert("session expired, login again to continue.")</script>';    
             header('location:logout.php');
