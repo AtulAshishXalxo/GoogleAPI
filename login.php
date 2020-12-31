@@ -39,7 +39,7 @@ if(!isset($_SESSION['access_token']))
 {
     //logout using time
        $_SESSION['start_time'] = time();
-       $_SESSION['expire_time'] = (1440 * 60) - $_SESSION['start_time'];
+       $_SESSION['expire_time'] = (1440 * 60);
        
       /*  echo $_SESSION['start_time'].'<br>';
        echo $_SESSION['expire_time'].'<br>';*/
